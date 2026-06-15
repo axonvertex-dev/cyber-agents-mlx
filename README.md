@@ -399,6 +399,7 @@ Recommended reading order:
 ```text
 docs/CODE_READINESS.md
 docs/INSTALL_APPLE_PROJECT.md
+docs/LAB_README.md
 docs/UNDERSTANDING_THE_FLOW.md
 docs/UNDERSTANDING_THE_RESULT.md
 docs/TRAINING_CONTEXT.md

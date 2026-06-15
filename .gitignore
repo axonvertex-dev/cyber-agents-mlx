@@ -24,7 +24,7 @@ __MACOSX/
 /policy_docs/index/*.jsonl
 !/policy_docs/index/.gitkeep
 
-# Large policy source PDFs - place locally, do not commit by default
+# Policy source PDFs - only the named lab PDFs are committed
 /policy_docs/raw/*.pdf
 !/policy_docs/raw/gdpr-regulation-2016-679.pdf
 !/policy_docs/raw/eu-ai-act-regulation-2024-1689.pdf
