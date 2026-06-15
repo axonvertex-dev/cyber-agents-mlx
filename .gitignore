@@ -26,6 +26,9 @@ __MACOSX/
 
 # Large policy source PDFs - place locally, do not commit by default
 /policy_docs/raw/*.pdf
+!/policy_docs/raw/gdpr-regulation-2016-679.pdf
+!/policy_docs/raw/eu-ai-act-regulation-2024-1689.pdf
+!/policy_docs/raw/eu-ai-act-gpai-guidelines-2025-draft-communication.pdf
 
 # Docker/build
 *.log
