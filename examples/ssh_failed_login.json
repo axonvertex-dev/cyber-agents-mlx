@@ -1,0 +1,4 @@
+{
+  "environment": "macos-docker-local",
+  "text": "Jun 13 12:31:09 server sshd[8821]: Failed password for invalid user admin from 45.91.23.10 port 55421 ssh2. password=hunter2 token=abc123"
+}

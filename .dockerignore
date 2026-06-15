@@ -1,0 +1,10 @@
+.env
+.git
+.gitignore
+__pycache__
+*.pyc
+.DS_Store
+__MACOSX
+policy_docs/index/*.json
+policy_docs/index/*.jsonl
+audit_logs/*.json

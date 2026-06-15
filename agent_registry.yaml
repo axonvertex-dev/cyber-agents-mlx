@@ -1,0 +1,102 @@
+system: cyber-agents-mlx
+version: 0.4.0
+runtime:
+  app: docker-compose
+  port: 18110
+  ollama_base_url: http://host.docker.internal:11434
+  fast_model: gemma4:e2b-mlx
+  deep_model: gemma4:e4b-mlx
+  embed_model: embeddinggemma:300m-qat-q8_0
+
+agents:
+  - id: redaction_agent
+    name: Redaction Agent
+    skill: skills/redaction/SKILL.md
+    model: deterministic
+    safety_level: high
+    allowed_actions:
+      - redact_secrets
+      - redact_ips
+      - redact_emails
+      - redact_tokens
+      - redact_private_keys
+
+  - id: signal_scanner_agent
+    name: Signal Scanner Agent
+    skill: skills/classification/SKILL.md
+    model: deterministic
+    safety_level: medium
+    allowed_actions:
+      - scan_patterns
+      - emit_signals
+
+  - id: policy_ingestion_agent
+    name: Policy Ingestion Agent
+    skill: skills/policy_ingestion/SKILL.md
+    model: deterministic
+    safety_level: medium
+    allowed_actions:
+      - validate_policy_documents
+      - chunk_policy_text
+      - generate_policy_embeddings
+      - write_local_policy_index
+
+  - id: policy_retrieval_agent
+    name: Policy Retrieval Agent
+    skill: skills/policy_retrieval/SKILL.md
+    model: embeddinggemma:300m-qat-q8_0
+    safety_level: high
+    allowed_actions:
+      - retrieve_policy_context
+      - rank_policy_chunks
+      - balance_policy_families
+
+  - id: fast_classifier_agent
+    name: Fast Classifier Agent
+    skill: skills/classification/SKILL.md
+    model: gemma4:e2b-mlx
+    safety_level: medium
+    allowed_actions:
+      - classify_alert
+      - assign_severity
+      - estimate_confidence
+
+  - id: gdpr_policy_agent
+    name: GDPR Policy Agent
+    skill: skills/gdpr_assessment/SKILL.md
+    model: deterministic
+    safety_level: high
+    allowed_actions:
+      - assess_personal_data_presence
+      - produce_gdpr_aligned_controls
+
+  - id: eu_ai_act_policy_agent
+    name: EU AI Act Policy Agent
+    skill: skills/eu_ai_act_assessment/SKILL.md
+    model: deterministic
+    safety_level: high
+    allowed_actions:
+      - assess_human_oversight
+      - assess_transparency
+      - assess_autonomous_action_boundary
+
+  - id: deep_analyst_agent
+    name: Deep Analyst Agent
+    skill: skills/analysis/SKILL.md
+    model: gemma4:e4b-mlx
+    safety_level: high
+    allowed_actions:
+      - explain_alert
+      - suggest_read_only_checks
+      - recommend_human_approval_points
+
+  - id: compliance_guard_agent
+    name: Compliance Guard Agent
+    skill: skills/compliance_guard/SKILL.md
+    model: deterministic
+    safety_level: critical
+    allowed_actions:
+      - block_destructive_commands
+      - block_exploit_guidance
+      - require_human_approval
+      - allow_read_only_triage

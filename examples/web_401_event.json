@@ -1,0 +1,4 @@
+{
+  "environment": "web-app-docker-local",
+  "text": "10.0.2.15 - user@example.com [13/Jun/2026:12:40:31 +0000] "POST /login HTTP/1.1" 401 512 token=abc123 suspicious repeated login failure"
+}

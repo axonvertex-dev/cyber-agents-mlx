@@ -1,0 +1,19 @@
+services:
+  cyber-agents-mlx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cyber-agents-mlx
+    ports:
+      - "18110:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./policy_docs:/app/policy_docs
+      - ./audit_logs:/app/audit_logs
+      - ./app:/app/app
+      - ./agents:/app/agents:ro
+      - ./skills:/app/skills:ro
+      - ./policies:/app/policies:ro
+      - ./scripts:/app/scripts:ro
+    restart: unless-stopped

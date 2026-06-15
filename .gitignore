@@ -1,0 +1,31 @@
+# Local secrets/config
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# Runtime audit evidence - generated locally
+/audit_logs/*.json
+!/audit_logs/.gitkeep
+
+# Generated policy indexes - rebuild locally
+/policy_docs/index/*.json
+/policy_docs/index/*.jsonl
+!/policy_docs/index/.gitkeep
+
+# Large policy source PDFs - place locally, do not commit by default
+/policy_docs/raw/*.pdf
+
+# Docker/build
+*.log
