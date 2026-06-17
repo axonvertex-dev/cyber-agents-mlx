@@ -1,0 +1,4 @@
+services:
+  cyber-agents-mlx:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
